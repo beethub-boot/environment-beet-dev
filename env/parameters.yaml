@@ -1,0 +1,10 @@
+adminUser:
+  password: vault:beet/adminUser:password
+  username: admin
+enableDocker: false
+pipelineUser:
+  email: contacto.beet@gmail.com
+  token: vault:beet/pipelineUser:token
+  username: beethub-boot
+prow:
+  hmacToken: vault:beet/prow:hmacToken

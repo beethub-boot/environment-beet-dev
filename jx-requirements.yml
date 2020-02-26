@@ -1,35 +1,82 @@
+autoUpdate:
+  enabled: false
+  schedule: ""
+bootConfigURL: https://github.com/beethub/environment-beet-dev
 cluster:
-  clusterName: ""
-  environmentGitOwner: ""
-  environmentGitPublic: false
-  project: ""
+  clusterName: beet
+  devEnvApprovers:
+  - beethub-boot
+  environmentGitOwner: beethub
+  environmentGitPublic: true
+  gitKind: github
+  gitName: github
+  gitServer: https://github.com
+  namespace: jx
+  project: app-cluster-268317
   provider: gke
-  zone: ""
-gitops: true
+  registry: gcr.io
+  zone: us-central1-a
 environments:
-- key: dev
-- key: staging
-- key: production
+- ingress:
+    domain: 35.192.160.97.nip.io
+    externalDNS: false
+    namespaceSubDomain: -jx.
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: dev
+  repository: environment-beet-dev
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: staging
+  repository: environment-beet-staging
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: production
+  repository: environment-beet-production
+gitops: true
 ingress:
-  domain: ""
+  domain: 35.192.160.97.nip.io
   externalDNS: false
+  namespaceSubDomain: -jx.
   tls:
     email: ""
     enabled: false
     production: false
 kaniko: true
-secretStorage: local
+repository: nexus
+secretStorage: vault
 storage:
+  backup:
+    enabled: false
+    url: ""
   logs:
-    enabled: false
-    url: ""
+    enabled: true
+    url: gs://beet-logs-80266e01-226d-42fd-b521-a6e0ff6d023c
   reports:
-    enabled: false
-    url: ""
+    enabled: true
+    url: gs://beet-reports-1b1b996d-6a44-442f-91e2-d358708ea971
   repository:
-    enabled: false
-    url: ""
+    enabled: true
+    url: gs://beet-repository-71812216-7c8a-429a-9b2e-e72c1c7d14f2
+vault: {}
+velero:
+  schedule: ""
+  ttl: ""
 versionStream:
-  ref: "master"
+  ref: v1.0.361
   url: https://github.com/jenkins-x/jenkins-x-versions.git
 webhook: prow
