@@ -1,0 +1,7 @@
+dependencies:
+- host: github.com
+  owner: beethub
+  repo: TestApp
+  url: https://github.com/beethub/TestApp.git
+  version: ""
+  versionURL: ""
