@@ -5,17 +5,17 @@ metadata:
   labels:
     owner: beethub
     provider: github
-    repository: TestApp
+    repository: test-app
   name: beethub-testapp
 spec:
-  description: Imported application for beethub/TestApp
-  httpCloneURL: https://github.com/beethub/TestApp.git
+  description: Imported application for beethub/test-app
+  httpCloneURL: https://github.com/beethub/test-app.git
   org: beethub
   provider: https://github.com
   providerKind: github
   providerName: github
-  repo: TestApp
+  repo: test-app
   scheduler:
     kind: ""
     name: ""
-  url: https://github.com/beethub/TestApp.git
+  url: https://github.com/beethub/test-app.git
